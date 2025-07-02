@@ -1,6 +1,28 @@
 ﻿using System.CommandLine;
 using AntDesign.Cli.Services;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
+// Check if running in MCP mode
+if (args.Length == 1 && args[0] == "-mcp")
+{
+    var builder = Host.CreateApplicationBuilder(args);
+
+    builder.Services.AddMcpServer()
+        .WithStdioServerTransport()
+        .WithTools<AntDesignTools>();
+
+    builder.Logging.AddConsole(options =>
+    {
+        options.LogToStandardErrorThreshold = LogLevel.Trace;
+    });
+
+    await builder.Build().RunAsync();
+    return 0;
+}
+
+// Regular CLI mode
 var componentService = new ComponentService();
 
 var rootCommand = new RootCommand("Ant Design Blazor Component CLI");
