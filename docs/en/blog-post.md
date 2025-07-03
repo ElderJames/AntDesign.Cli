@@ -56,7 +56,7 @@ Commands to publish the tool:
 dotnet pack
 
 # Local installation (for development testing)
-dotnet tool install --global --add-source ./nupkg AntDesign.Cli
+dotnet tool install --global --add-source ./bind/Release AntDesign.Cli
 
 # Publish to NuGet (requires API Key)
 dotnet nuget push ./nupkg/AntDesign.Cli.1.0.0.nupkg --api-key your-api-key --source https://api.nuget.org/v3/index.json

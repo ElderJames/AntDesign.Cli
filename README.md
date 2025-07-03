@@ -16,7 +16,7 @@ For detailed implementation guide and technical discussion, check out our blog p
 ## Installation
 
 ```bash
-dotnet tool install AntDesign.Cli
+dotnet tool install --global AntDesign.Cli
 ```
 
 ## Usage

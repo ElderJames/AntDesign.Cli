@@ -56,7 +56,7 @@ AntDesign.Cli 是一个用于查询 Ant Design Blazor 组件信息的命令行�
 dotnet pack
 
 # 本地安装（开发测试用）
-dotnet tool install --global --add-source ./nupkg AntDesign.Cli
+dotnet tool install --global --add-source ./bind/Release AntDesign.Cli
 
 # 发布到 NuGet（需要 API Key）
 dotnet nuget push ./nupkg/AntDesign.Cli.1.0.0.nupkg --api-key your-api-key --source https://api.nuget.org/v3/index.json
