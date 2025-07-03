@@ -18,13 +18,48 @@ AntDesign.Cli is a command-line tool for querying Ant Design Blazor component in
 
 ### 1. Preparation
 
-First, we need to add the necessary NuGet packages:
+First, we need to add the necessary NuGet packages and configure the project file:
 
 ```xml
-<ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>antblazor</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    
+    <!-- NuGet Package Information -->
+    <Version>1.0.0</Version>
+    <Authors>Your Name</Authors>
+    <Company>Your Company</Company>
+    <Description>Ant Design Blazor CLI and MCP Server Tool</Description>
+    <PackageTags>antdesign;blazor;cli;mcp</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
     <PackageReference Include="ModelContextProtocol" Version="0.1.0-preview.12" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
-</ItemGroup>
+  </ItemGroup>
+</Project>
+```
+
+Key configuration explanation:
+- `PackAsTool`: Set to true to indicate this is a .NET Tool
+- `ToolCommandName`: Defines the command name that users will use to invoke the tool
+- `PackageOutputPath`: Specifies the output directory for the generated NuGet package
+
+Commands to publish the tool:
+```bash
+# Pack
+dotnet pack
+
+# Local installation (for development testing)
+dotnet tool install --global --add-source ./nupkg AntDesign.Cli
+
+# Publish to NuGet (requires API Key)
+dotnet nuget push ./nupkg/AntDesign.Cli.1.0.0.nupkg --api-key your-api-key --source https://api.nuget.org/v3/index.json
 ```
 
 ### 2. Creating Data Models

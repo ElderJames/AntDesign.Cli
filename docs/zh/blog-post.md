@@ -18,13 +18,48 @@ AntDesign.Cli 是一个用于查询 Ant Design Blazor 组件信息的命令行�
 
 ### 1. 准备工作
 
-首先，我们需要添加必要的 NuGet 包：
+首先，我们需要添加必要的 NuGet 包并配置项目文件：
 
 ```xml
-<ItemGroup>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>antblazor</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    
+    <!-- NuGet 包信息 -->
+    <Version>1.0.0</Version>
+    <Authors>Your Name</Authors>
+    <Company>Your Company</Company>
+    <Description>Ant Design Blazor CLI and MCP Server Tool</Description>
+    <PackageTags>antdesign;blazor;cli;mcp</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
     <PackageReference Include="ModelContextProtocol" Version="0.1.0-preview.12" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
-</ItemGroup>
+  </ItemGroup>
+</Project>
+```
+
+关键配置说明：
+- `PackAsTool`: 设置为 true 表示这是一个 .NET Tool
+- `ToolCommandName`: 定义工具的命令名称，用户将使用这个命令调用工具
+- `PackageOutputPath`: 指定生成的 NuGet 包的输出目录
+
+发布工具的命令：
+```bash
+# 打包
+dotnet pack
+
+# 本地安装（开发测试用）
+dotnet tool install --global --add-source ./nupkg AntDesign.Cli
+
+# 发布到 NuGet（需要 API Key）
+dotnet nuget push ./nupkg/AntDesign.Cli.1.0.0.nupkg --api-key your-api-key --source https://api.nuget.org/v3/index.json
 ```
 
 ### 2. 创建数据模型
