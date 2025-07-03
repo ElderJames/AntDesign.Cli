@@ -32,5 +32,6 @@ rootCommand.AddCommand(new ComponentListCommand(componentService));
 rootCommand.AddCommand(new ComponentDemoCommand());
 rootCommand.AddCommand(new ComponentBatchSearchCommand());
 rootCommand.AddCommand(new ComponentCategoryCommand());
+rootCommand.AddCommand(new DemoListCommand());
 
 return await rootCommand.InvokeAsync(args);

@@ -85,9 +85,9 @@ public sealed class AntDesignTools
     }
 
     [McpServerTool]
-    [Description("Search for Ant Design Blazor component demos by component name and scenario, supports fuzzy search and multiple queries. Format: 'Component:Scenario,Component2:Scenario2'")]
+    [Description("Retrieve the full C# source code for Ant Design Blazor demo(s) by specifying component name and optional scenario. Accepts one or more 'Component:Scenario' pairs separated by commas (e.g., 'Button:Icon, Table:Editable'). Scenario can be partial or left blank to automatically choose the most relevant demo. Returns Markdown-formatted code block(s) containing the demo source.")]
     public async Task<string> SearchComponentDemos(
-        [Description("Comma-separated list of 'Component:Scenario' pairs, in English")] string queries)
+        [Description("Comma-separated list of 'Component:Scenario' pairs (e.g., 'Button:Icon, Table:Editable'). Leave Scenario blank to fetch the best match.")] string queries)
     {
 
         var queryPairs = queries.Split(',')
@@ -131,5 +131,18 @@ public sealed class AntDesignTools
             }
         }
         return string.Join("\n\n", results);
+    }
+
+    [McpServerTool]
+    [Description("List every available Ant Design Blazor demo with its component, scenario, and description. Use this command for exploration; afterwards call 'SearchComponentDemos' with 'Component:Scenario' to get the demo's source code.")]
+    public async Task<string> ListAllDemos()
+    {
+        var allDemos = await _demoService.LoadDemosAsync();
+        if (allDemos == null || allDemos.Count == 0)
+        {
+            return "No demos found.";
+        }
+        var lines = allDemos.Select(d => $"Component: {d.Component}\nScenario: {d.Scenario}\nDescription: {d.Description}\n");
+        return string.Join("\n", lines);
     }
 } 
