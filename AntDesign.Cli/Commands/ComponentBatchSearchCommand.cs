@@ -5,7 +5,7 @@ namespace AntDesign.Cli.Commands;
 
 public class ComponentBatchSearchCommand : Command
 {
-    public ComponentBatchSearchCommand() : base("search-components", "Search for multiple components by names")
+    public ComponentBatchSearchCommand() : base("search", "Search for multiple components by names")
     {
         var namesOption = new Option<string>(
             aliases: new[] { "--names", "-n" },

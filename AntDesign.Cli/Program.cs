@@ -27,7 +27,6 @@ if (args.Length == 1 && args[0] == "-mcp")
 var componentService = new ComponentService();
 var rootCommand = new RootCommand("Ant Design Blazor Component CLI");
 
-rootCommand.AddCommand(new ComponentSearchCommand(componentService));
 rootCommand.AddCommand(new ComponentListCommand(componentService));
 rootCommand.AddCommand(new ComponentDemoCommand());
 rootCommand.AddCommand(new ComponentBatchSearchCommand());

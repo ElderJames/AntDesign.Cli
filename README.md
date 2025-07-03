@@ -13,6 +13,25 @@ For detailed implementation guide and technical discussion, check out our blog p
 - Supports both CLI and MCP Server modes
 - GitHub Copilot integration
 
+## Supported Tools
+
+### CLI Commands
+
+- `list`: List all components
+- `search -n <ComponentName1,ComponentName2,...>`: Batch search components by name
+- `category -n <CategoryName>`: Filter components by category
+- `demo-list`: List all component demos
+- `demo -n <ComponentName>`: View demos for a specific component
+
+### MCP Server Tools
+
+- `SearchComponents`: Batch search components by name
+- `ListComponents`: List all components
+- `GetComponentsByCategory`: Get components by category
+- `ListAllDemos`: List all component demos
+- `SearchComponentDemos`: Get demos by component name and scenario
+
+
 ## Installation
 
 ```bash

@@ -5,7 +5,7 @@ namespace AntDesign.Cli.Commands;
 
 public class ComponentCategoryCommand : Command
 {
-    public ComponentCategoryCommand() : base("get-by-category", "Get component information by category")
+    public ComponentCategoryCommand() : base("category", "Get component information by category")
     {
         var categoryOption = new Option<string>(
             aliases: new[] { "--category", "-c" },

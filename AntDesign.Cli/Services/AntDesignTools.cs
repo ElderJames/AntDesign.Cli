@@ -17,22 +17,6 @@ public sealed class AntDesignTools
     }
 
     [McpServerTool]
-    [Description("Search for an Ant Design Blazor component by name")]
-    public async Task<string> SearchComponent(
-        [Description("The name of the component to search for")] string name)
-    {
-        await _componentService.LoadComponentsAsync();
-        var component = _componentService.FindComponent(name);
-        
-        if (component == null)
-        {
-            return $"Component '{name}' not found.";
-        }
-
-        return component.ToString();
-    }
-
-    [McpServerTool]
     [Description("Search for multiple Ant Design Blazor components by names")]
     public async Task<string> SearchComponents(
         [Description("Comma-separated list of component names to search for, were splited by ','")] string names)
