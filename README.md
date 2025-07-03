@@ -13,7 +13,7 @@ A command-line tool and MCP (Model Context Protocol) server for querying Ant Des
 ## Installation
 
 ```bash
-dotnet tool install --global --add-source ./bin/Debug AntDesign.Cli
+dotnet tool install AntDesign.Cli
 ```
 
 ## Usage

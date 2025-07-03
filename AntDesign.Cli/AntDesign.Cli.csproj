@@ -7,9 +7,21 @@
     <Nullable>enable</Nullable>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>antblazor</ToolCommandName>
-    <Version>0.0.1</Version>
     <Authors>JamesYeung</Authors>
     <Description>A CLI tool for querying Ant Design Blazor component information</Description>
+    
+    <!-- NuGet Package Information -->
+    <PackageId>AntDesign.Cli</PackageId>
+    <PackageTags>antdesign;blazor;cli;mcp;agent;ai</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/ElderJames/AntDesign.Cli</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ElderJames/AntDesign.Cli</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    
+    <!-- Include symbols and source -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +29,10 @@
     <PackageReference Include="System.Text.Json" Version="9.0.4" />
     <PackageReference Include="ModelContextProtocol" Version="0.1.0-preview.12" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

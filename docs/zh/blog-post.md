@@ -1,10 +1,10 @@
-# 将 .NET CLI 工具转换为 GitHub Copilot MCP 服务器：实战案例
+# 开发 .NET 本地工具作为 GitHub Copilot MCP 服务器
 
-在这篇文章中，我将分享如何将一个普通的 .NET CLI 工具转换为支持 GitHub Copilot 的 MCP (Model Context Protocol) 服务器。我们将以一个实际项目 AntDesign.Cli 为例，这是一个用于查询 Ant Design Blazor 组件信息的工具。
+我一直在用 AntDesign Blazor 配合AI辅助编程，能够非常高效地进行全栈开发。但时常会出现有些属性使用方式落后的问题。不料昨日突然灵感乍现：我可以用.NET的本地工具写一个CLI查询我们文档在构建时生成的json产物，然后再加一个MCP服务让AI编辑器调用。这个项目命名为 AntDesign.Cli 为例，这是一个用于查询 Ant Design Blazor 组件最新API信息的工具，能够避免模型训练数据集版本落后的问题。
 
 ## 背景
 
-随着 AI 辅助编程工具的发展，GitHub Copilot 推出了 Agent 模式，允许它与本地工具进行交互。这为我们提供了一个机会，可以将现有的命令行工具转换为 AI 可以直接调用的服务。
+随着 AI 辅助编程工具的发展，GitHub Copilot 推出了 Agent 模式，允许它与MCP进行交互。.NET早已官方提供MCP SDK，而本地工具能提供很便捷的分发渠道，只要安装过.NET SDK，则可通过一个命令行安装使用。虽然没有npx的免安装特性方便，但这是我能想到的最便捷的.NET MCP分发方式了。
 
 ## 项目概述
 
@@ -129,7 +129,7 @@ if (args.Length == 1 && args[0] == "-mcp")
 ### 安装工具
 
 ```bash
-dotnet tool install --global --add-source ./bin/Debug AntDesign.Cli
+dotnet tool install AntDesign.Cli
 ```
 
 ### 配置 VS Code
