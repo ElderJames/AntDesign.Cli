@@ -1,7 +1,7 @@
 using System.Text.Json;
-using AntDesign.Cli.Models;
+using AntDesign.Docs.MCP.Models;
 
-namespace AntDesign.Cli.Services;
+namespace AntDesign.Docs.MCP.Services;
 
 public class ComponentService
 {

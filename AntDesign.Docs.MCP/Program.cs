@@ -1,6 +1,6 @@
 ﻿using System.CommandLine;
-using AntDesign.Cli.Services;
-using AntDesign.Cli.Commands;
+using AntDesign.Docs.MCP.Services;
+using AntDesign.Docs.MCP.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;

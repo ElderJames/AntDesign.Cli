@@ -1,6 +1,6 @@
 # Developing a .NET Local Tool as a GitHub Copilot MCP Server
 
-I've been using AntDesign Blazor with AI-assisted programming for efficient full-stack development. However, I occasionally encountered issues with outdated property usage. Yesterday, an inspiration struck: I could create a CLI tool using .NET to query the JSON artifacts generated during our documentation build, and then add an MCP service for AI editors to call. Taking AntDesign.Cli as an example, this tool queries the latest API information for Ant Design Blazor components, effectively solving the problem of outdated model training datasets.
+I've been using AntDesign Blazor with AI-assisted programming for efficient full-stack development. However, I occasionally encountered issues with outdated property usage. Yesterday, an inspiration struck: I could create a CLI tool using .NET to query the JSON artifacts generated during our documentation build, and then add an MCP service for AI editors to call. Taking AntDesign.Docs.MCP as an example, this tool queries the latest API information for Ant Design Blazor components, effectively solving the problem of outdated model training datasets.
 
 ## Background
 
@@ -8,7 +8,7 @@ With the evolution of AI-assisted programming tools, GitHub Copilot introduced t
 
 ## Project Overview
 
-AntDesign.Cli is a command-line tool for querying Ant Design Blazor component information. Its main features include:
+AntDesign.Docs.MCP is a command-line tool for querying Ant Design Blazor component information. Its main features include:
 
 1. Searching for detailed information about specific components
 2. Listing all available components
@@ -56,10 +56,10 @@ Commands to publish the tool:
 dotnet pack
 
 # Local installation (for development testing)
-dotnet tool install --global --add-source ./bind/Release AntDesign.Cli
+dotnet tool install --global --add-source ./bind/Release AntDesign.Docs.MCP
 
 # Publish to NuGet (requires API Key)
-dotnet nuget push ./nupkg/AntDesign.Cli.1.0.0.nupkg --api-key your-api-key --source https://api.nuget.org/v3/index.json
+dotnet nuget push ./nupkg/AntDesign.Docs.MCP.1.0.0.nupkg --api-key your-api-key --source https://api.nuget.org/v3/index.json
 ```
 
 ### 2. Creating Data Models
@@ -164,7 +164,7 @@ if (args.Length == 1 && args[0] == "-mcp")
 ### Installing the Tool
 
 ```bash
-dotnet tool install AntDesign.Cli
+dotnet tool install AntDesign.Docs.MCP
 ```
 
 ### Configuring VS Code

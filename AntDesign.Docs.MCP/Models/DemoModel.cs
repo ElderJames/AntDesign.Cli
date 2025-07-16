@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace AntDesign.Cli.Models;
+namespace AntDesign.Docs.MCP.Models;
 
 public class DemoModel
 {

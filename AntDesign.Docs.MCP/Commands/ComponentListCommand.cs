@@ -1,7 +1,7 @@
 using System.CommandLine;
-using AntDesign.Cli.Services;
+using AntDesign.Docs.MCP.Services;
 
-namespace AntDesign.Cli.Commands;
+namespace AntDesign.Docs.MCP.Commands;
 
 public class ComponentListCommand : Command
 {

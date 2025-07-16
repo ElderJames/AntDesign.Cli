@@ -1,6 +1,6 @@
 # 开发 .NET 本地工具作为 GitHub Copilot MCP 服务器
 
-我一直在用 AntDesign Blazor 配合AI辅助编程，能够非常高效地进行全栈开发。但时常会出现有些属性使用方式落后的问题。不料昨日突然灵感乍现：我可以用.NET的本地工具写一个CLI查询我们文档在构建时生成的json产物，然后再加一个MCP服务让AI编辑器调用。这个项目命名为 AntDesign.Cli 为例，这是一个用于查询 Ant Design Blazor 组件最新API信息的工具，能够避免模型训练数据集版本落后的问题。
+我一直在用 AntDesign Blazor 配合AI辅助编程，能够非常高效地进行全栈开发。但时常会出现有些属性使用方式落后的问题。不料昨日突然灵感乍现：我可以用.NET的本地工具写一个CLI查询我们文档在构建时生成的json产物，然后再加一个MCP服务让AI编辑器调用。这个项目命名为 AntDesign.Docs.MCP 为例，这是一个用于查询 Ant Design Blazor 组件最新API信息的工具，能够避免模型训练数据集版本落后的问题。
 
 ## 背景
 
@@ -8,7 +8,7 @@
 
 ## 项目概述
 
-AntDesign.Cli 是一个用于查询 Ant Design Blazor 组件信息的命令行工具。它的主要功能包括：
+AntDesign.Docs.MCP 是一个用于查询 Ant Design Blazor 组件信息的命令行工具。它的主要功能包括：
 
 1. 搜索特定组件的详细信息
 2. 列出所有可用组件
@@ -56,10 +56,10 @@ AntDesign.Cli 是一个用于查询 Ant Design Blazor 组件信息的命令行�
 dotnet pack
 
 # 本地安装（开发测试用）
-dotnet tool install --global --add-source ./bind/Release AntDesign.Cli
+dotnet tool install --global --add-source ./bind/Release AntDesign.Docs.MCP
 
 # 发布到 NuGet（需要 API Key）
-dotnet nuget push ./nupkg/AntDesign.Cli.1.0.0.nupkg --api-key your-api-key --source https://api.nuget.org/v3/index.json
+dotnet nuget push ./nupkg/AntDesign.Docs.MCP.1.0.0.nupkg --api-key your-api-key --source https://api.nuget.org/v3/index.json
 ```
 
 ### 2. 创建数据模型
@@ -164,7 +164,7 @@ if (args.Length == 1 && args[0] == "-mcp")
 ### 安装工具
 
 ```bash
-dotnet tool install AntDesign.Cli
+dotnet tool install AntDesign.Docs.MCP
 ```
 
 ### 配置 VS Code

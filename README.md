@@ -1,4 +1,4 @@
-# AntDesign.Cli
+# AntDesign.Docs.MCP
 
 A command-line tool and MCP (Model Context Protocol) server for querying Ant Design Blazor component information. It helps developers quickly access component documentation and API details directly from the command line or through GitHub Copilot.
 
@@ -35,7 +35,7 @@ For detailed implementation guide and technical discussion, check out our blog p
 ## Installation
 
 ```bash
-dotnet tool install --global AntDesign.Cli
+dotnet tool install --global AntDesign.Docs.MCP
 ```
 
 ## Usage

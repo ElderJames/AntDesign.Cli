@@ -1,8 +1,8 @@
 using System.Text.Json;
-using AntDesign.Cli.Models;
+using AntDesign.Docs.MCP.Models;
 using System.Net.Http;
 
-namespace AntDesign.Cli.Services;
+namespace AntDesign.Docs.MCP.Services;
 
 public class DemoService
 {

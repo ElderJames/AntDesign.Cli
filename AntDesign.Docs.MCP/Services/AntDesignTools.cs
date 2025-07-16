@@ -2,7 +2,7 @@ using System.ComponentModel;
 using ModelContextProtocol.Server;
 using SmartComponents.LocalEmbeddings;
 
-namespace AntDesign.Cli.Services;
+namespace AntDesign.Docs.MCP.Services;
 
 [McpServerToolType]
 public sealed class AntDesignTools

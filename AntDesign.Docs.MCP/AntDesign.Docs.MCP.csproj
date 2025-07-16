@@ -6,16 +6,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackAsTool>true</PackAsTool>
-    <ToolCommandName>antblazor</ToolCommandName>
+    <ToolCommandName>antblazor-mcp</ToolCommandName>
     <Authors>JamesYeung</Authors>
     <Description>A CLI tool for querying Ant Design Blazor component information</Description>
     
     <!-- NuGet Package Information -->
-    <PackageId>AntDesign.Cli</PackageId>
+    <PackageId>AntDesign.Docs.MCP</PackageId>
     <PackageTags>antdesign;blazor;cli;mcp;agent;ai</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/ElderJames/AntDesign.Cli</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/ElderJames/AntDesign.Cli</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/ElderJames/AntDesign.Docs.MCP</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ElderJames/AntDesign.Docs.MCP</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     
